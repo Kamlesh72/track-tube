@@ -13,7 +13,11 @@ connectDB();
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 // routes
 app.use(express.static(path.resolve("build")));
