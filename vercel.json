@@ -11,23 +11,11 @@
   ],
   "routes": [
     {
-      "src": "/api/v1/auth",
-      "dest": "server.js"
-    },
-    {
-      "src": "/api/v1/auth/(.*)",
-      "dest": "server.js"
-    },
-    {
-      "src": "/api/(.*)",
+      "src": "/(.*)",
       "dest": "server.js"
     },
     {
       "src": "/",
-      "dest": "build/index.html"
-    },
-    {
-      "src": "/register",
       "dest": "build/index.html"
     },
     {
