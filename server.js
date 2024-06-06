@@ -21,11 +21,11 @@ app.use(
 
 // routes
 app.use(express.static(path.resolve("build")));
+app.get('/login', (req, res) => {
+  res.sendFile(path.resolve('build', 'index.html'));
+});
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/dashboard", requireSignIn, dashboardRoutes);
-app.use("/login", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build/index.html"));
-});
 app.use("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "build/index.html"));
 });
